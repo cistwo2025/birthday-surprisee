@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Birthday Surprise</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- =================================
+         DECORATION
+    ================================== -->
+
+    <div class="decoration deco-star-1">✦</div>
+    <div class="decoration deco-star-2">✧</div>
+    <div class="decoration deco-star-3">★</div>
+
+    <div class="decoration deco-cassette">📼</div>
+    <div class="decoration deco-camera">📷</div>
+    <div class="decoration deco-headphone">🎧</div>
+
+
+    <!-- =================================
+         SCENE 1
+    ================================== -->
+
+    <section class="scene active" id="scene1">
+
+        <div class="content">
+
+            <div class="intro-symbol">
+                ✦
+            </div>
+
+            <p class="small-text">
+                A LITTLE SURPRISE
+            </p>
+
+            <h1>
+                Today is<br>
+                <span>your day.</span>
+            </h1>
+
+            <!-- Typing text -->
+            <div class="typing-box">
+                <span id="typingText"></span>
+                <span class="cursor">|</span>
+            </div>
+
+            <p class="description">
+                Ada sesuatu kecil yang dibuat
+                khusus untuk hari ini.
+            </p>
+
+            <button class="main-button" id="startButton">
+                Start The Surprise
+                <span>→</span>
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =================================
+         SCENE 2
+    ================================== -->
+
+    <section class="scene" id="scene2">
+
+        <div class="content">
+
+            <div class="scene-symbol">
+                ✧
+            </div>
+
+            <p class="small-text">
+                SOMETHING FOR YOU
+            </p>
+
+            <h2>
+                Open<br>
+                this letter.
+            </h2>
+
+            <p class="description">
+                Ada sedikit pesan yang
+                menunggu untuk dibaca.
+            </p>
+
+
+            <!-- Envelope -->
+
+            <div class="envelope-wrapper" id="envelope">
+
+                <div class="envelope">
+
+                    <div class="envelope-back"></div>
+
+                    <div class="letter">
+
+                        <p class="letter-symbol">
+                            ✦
+                        </p>
+
+                        <span>
+                            A Little Note
+                        </span>
+
+                    </div>
+
+                    <div class="envelope-front"></div>
+
+                    <div class="envelope-flap"></div>
+
+                </div>
+
+            </div>
+
+            <p class="tap-hint">
+                TAP THE ENVELOPE
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =================================
+         SCENE 3
+    ================================== -->
+
+    <section class="scene" id="scene3">
+
+        <div class="content">
+
+            <!-- Balloons -->
+
+            <div class="balloon balloon-left">
+                <div class="balloon-body">🎈</div>
+                <div class="balloon-string"></div>
+            </div>
+
+            <div class="balloon balloon-right">
+                <div class="balloon-body">🎈</div>
+                <div class="balloon-string"></div>
+            </div>
+
+
+            <!-- Cake -->
+
+            <div class="cake-container">
+
+                <div class="cake-glow"></div>
+
+                <div class="cake">
+                    🎂
+                </div>
+
+            </div>
+
+
+            <p class="small-text">
+                THE MAIN EVENT
+            </p>
+
+            <h2 class="birthday-title">
+                HAPPY<br>
+                <span>BIRTHDAY!</span>
+            </h2>
+
+
+            <div class="card">
+
+                <div class="card-top">
+                    <span>✦</span>
+                    <span>BIRTHDAY NOTE</span>
+                    <span>✦</span>
+                </div>
+
+                <p>
+                    Selamat ulang tahun! 🎉
+                </p>
+
+                <p>
+                    Semoga hari ini membawa banyak
+                    hal baik, tawa, pengalaman baru,
+                    dan momen yang menyenangkan
+                    dan juga dipenuhi dengan
+                    banyak senyum, cerita seru,
+                    dan hal-hal kecil yang membuatmu bahagia..
+                </p>
+
+                <p>
+                    Semoga apa pun yang sedang
+                    kamu perjuangkan bisa berjalan
+                    satu per satu dengan baik
+                    dan semua hal baik
+                    datang kepadamu satu per satu.
+                </p>
+
+            </div>
+
+
+            <button class="main-button" id="surpriseButton">
+                One More Thing
+                <span>✦</span>
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =================================
+         SCENE 4
+    ================================== -->
+
+    <section class="scene" id="scene4">
+
+        <div class="content final-content">
+
+            <div class="final-symbol">
+                ★
+            </div>
+
+            <p class="small-text">
+                ONE LAST MESSAGE
+            </p>
+
+            <h2>
+                This little website
+                is just for you
+            </h2>
+
+            <div class="final-message">
+
+                <p>
+                    Tidak semua hari akan berjalan
+                    sesuai rencana, tapi semoga selalu
+                    ada alasan untuk kamu tetap tersenyum
+                    dan menikmati perjalanan.
+                </p>
+
+                <p>
+                    Semoga tahun ini penuh dengan
+                    cerita baru yang seru,
+                    kesempatan baru, dan
+                    banyak hal baik.
+                </p>
+
+                <strong>
+                    Happy Birthday! 🎂
+                </strong>
+
+                <div class="signature-symbol">
+                    ✦
+                </div>
+
+            </div>
+
+
+            <div class="final-icons">
+
+                <span>📼</span>
+                <span>📷</span>
+                <span>🎧</span>
+                <span>✦</span>
+
+            </div>
+
+
+            <button class="restart-button" id="restartButton">
+                ↻ Replay
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =================================
+         CONFETTI
+    ================================== -->
+
+    <div id="confettiContainer"></div>
+
+
+    <!-- =================================
+         JS
+    ================================== -->
+
+    <script src="script.js"></script>
+
+</body>
+</html>

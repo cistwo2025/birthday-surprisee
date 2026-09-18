@@ -1,0 +1,1199 @@
+/* =====================================
+   ROOT
+===================================== */
+
+:root {
+    --navy: #1f2940;
+    --navy-light: #53698c;
+
+    --purple: #5b4e78;
+    --purple-dark: #443b5e;
+
+    --maroon: #7b4d60;
+    --maroon-light: #b77d91;
+
+    --white: #f1f1f6;
+    --soft-white: #d9dbe7;
+
+    --text: #b9bccb;
+    --muted: #9296aa;
+
+    --border: rgba(220, 220, 235, 0.14);
+
+    --shadow:
+        0 18px 40px rgba(0, 0, 0, 0.28);
+}
+
+
+/* =====================================
+   RESET
+===================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+
+    overflow: hidden;
+
+    font-family:
+        "Trebuchet MS",
+        "Segoe UI",
+        sans-serif;
+
+    color: var(--text);
+
+    background:
+        radial-gradient(
+            circle at 15% 10%,
+            rgba(83, 105, 140, 0.32),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 88% 18%,
+            rgba(91, 78, 120, 0.30),
+            transparent 32%
+        ),
+        radial-gradient(
+            circle at 45% 100%,
+            rgba(123, 77, 96, 0.28),
+            transparent 35%
+        ),
+        linear-gradient(
+            145deg,
+            #1d263b,
+            #29243b 50%,
+            #382733
+        );
+}
+
+
+/* =====================================
+   SCENES
+===================================== */
+
+.scene {
+    position: fixed;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding:
+        60px 20px 30px;
+
+    text-align: center;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transform:
+        translateY(18px)
+        scale(0.97);
+
+    transition:
+        opacity 0.6s ease,
+        transform 0.6s ease,
+        visibility 0.6s ease;
+}
+
+.scene.active {
+    opacity: 1;
+
+    visibility: visible;
+
+    transform:
+        translateY(0)
+        scale(1);
+}
+
+
+/* =====================================
+   CONTENT
+===================================== */
+
+.content {
+    width: 100%;
+
+    max-width: 420px;
+
+    position: relative;
+
+    z-index: 10;
+}
+
+
+/* =====================================
+   TEXT
+===================================== */
+
+.small-text {
+    font-size: 11px;
+
+    letter-spacing: 3px;
+
+    color: #aaaed0;
+
+    font-weight: 800;
+
+    margin-bottom: 18px;
+}
+
+.content h1,
+.content h2 {
+    color: var(--white);
+
+    font-weight: 900;
+
+    line-height: 0.96;
+
+    letter-spacing: -2px;
+}
+
+.content h1 {
+    font-size: clamp(
+        44px,
+        12vw,
+        67px
+    );
+
+    margin-bottom: 23px;
+}
+
+.content h1 span {
+    color: var(--maroon-light);
+}
+
+.content h2 {
+    font-size: clamp(
+        37px,
+        10vw,
+        51px
+    );
+
+    margin-bottom: 20px;
+}
+
+.description {
+    max-width: 320px;
+
+    margin: 0 auto 27px;
+
+    font-size: 14px;
+
+    line-height: 1.8;
+
+    color: var(--muted);
+}
+
+
+/* =====================================
+   INTRO
+===================================== */
+
+.intro-symbol {
+    font-size: 32px;
+
+    color: #a5acd0;
+
+    margin-bottom: 17px;
+
+    animation:
+        symbolFloat 2s ease-in-out infinite;
+}
+
+.scene-symbol {
+    font-size: 31px;
+
+    color: #a698c5;
+
+    margin-bottom: 14px;
+
+    animation:
+        symbolFloat 2s ease-in-out infinite;
+}
+
+
+/* =====================================
+   TYPING
+===================================== */
+
+.typing-box {
+    min-height: 24px;
+
+    margin-bottom: 10px;
+
+    color: #c7c8d7;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    letter-spacing: 0.5px;
+}
+
+.cursor {
+    display: inline-block;
+
+    color: var(--maroon-light);
+
+    font-weight: 900;
+
+    animation:
+        cursorBlink 0.8s infinite;
+}
+
+
+/* =====================================
+   MAIN BUTTON
+===================================== */
+
+.main-button {
+    border: 1px solid rgba(
+        210,
+        210,
+        230,
+        0.12
+    );
+
+    padding:
+        15px 23px;
+
+    border-radius: 14px;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--navy-light),
+            var(--purple)
+        );
+
+    font-size: 13px;
+
+    font-weight: 800;
+
+    letter-spacing: 0.4px;
+
+    cursor: pointer;
+
+    box-shadow: var(--shadow);
+
+    transition:
+        transform 0.2s ease,
+        filter 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.main-button span {
+    margin-left: 8px;
+
+    color: #d8d4e9;
+}
+
+.main-button:hover {
+    transform: translateY(-3px);
+
+    filter: brightness(1.08);
+}
+
+.main-button:active {
+    transform: scale(0.96);
+}
+
+/* =====================================
+   ENVELOPE
+===================================== */
+
+.envelope-wrapper {
+    width: 225px;
+
+    height: 160px;
+
+    margin:
+        38px auto 20px;
+
+    perspective: 900px;
+
+    cursor: pointer;
+}
+
+.envelope {
+    position: relative;
+
+    width: 100%;
+    height: 100%;
+
+    transform-style:
+        preserve-3d;
+
+    transition:
+        transform 0.3s ease;
+}
+
+.envelope-wrapper:hover .envelope {
+    transform:
+        translateY(-6px);
+}
+
+.envelope-back {
+    position: absolute;
+
+    inset: 0;
+
+    border-radius: 12px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #51698d,
+            #483f62
+        );
+
+    box-shadow: var(--shadow);
+}
+
+.letter {
+    position: absolute;
+
+    left: 15px;
+    right: 15px;
+    bottom: 15px;
+
+    height: 120px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    background:
+        linear-gradient(
+            145deg,
+            #ededf3,
+            #dfe0e9
+        );
+
+    border-radius: 8px;
+
+    color: #4d4e69;
+
+    z-index: 2;
+
+    box-shadow:
+        0 7px 18px rgba(
+            0,
+            0,
+            0,
+            0.12
+        );
+
+    transition:
+        transform 0.8s ease;
+}
+
+.letter-symbol {
+    font-size: 28px;
+
+    color: var(--maroon);
+
+    margin-bottom: 7px;
+}
+
+.letter span {
+    font-size: 13px;
+
+    text-transform:
+        uppercase;
+
+    letter-spacing: 2px;
+
+    font-weight: 900;
+}
+
+.envelope-front {
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 3;
+
+    border-radius:
+        0 0 12px 12px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #53698f,
+            #4c587d
+        );
+
+    clip-path:
+        polygon(
+            0 35%,
+            50% 70%,
+            100% 35%,
+            100% 100%,
+            0 100%
+        );
+}
+
+.envelope-flap {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 80%;
+
+    z-index: 4;
+
+    background:
+        linear-gradient(
+            145deg,
+            #675e86,
+            #54496f
+        );
+
+    clip-path:
+        polygon(
+            0 0,
+            100% 0,
+            50% 55%
+        );
+
+    transform-origin: top;
+
+    transition:
+        transform 0.8s ease;
+}
+
+.envelope-wrapper.open
+.envelope-flap {
+    transform:
+        rotateX(180deg);
+}
+
+.envelope-wrapper.open
+.letter {
+    transform:
+        translateY(-72px);
+
+    z-index: 5;
+}
+
+.tap-hint {
+    color: #9296aa;
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+    font-weight: 700;
+
+    animation:
+        hintPulse 1.7s infinite;
+}
+
+
+/* =====================================
+   CAKE
+===================================== */
+
+.cake-container {
+    position: relative;
+
+    width: 105px;
+
+    height: 90px;
+
+    margin:
+        0 auto 8px;
+}
+
+.cake {
+    position: relative;
+
+    z-index: 2;
+
+    font-size: 70px;
+
+    animation:
+        cakeFloat 2s
+        ease-in-out
+        infinite;
+
+    filter:
+        drop-shadow(
+            0 10px 17px
+            rgba(
+                0,
+                0,
+                0,
+                0.3
+            )
+        );
+}
+
+.cake-glow {
+    position: absolute;
+
+    width: 75px;
+    height: 75px;
+
+    top: 10px;
+    left: 15px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(
+            183,
+            125,
+            145,
+            0.16
+        );
+
+    filter:
+        blur(16px);
+
+    animation:
+        glowPulse 2s infinite;
+}
+
+
+/* =====================================
+   BALLOONS
+===================================== */
+
+.balloon {
+    position: absolute;
+
+    top: 18px;
+
+    z-index: 1;
+
+    animation:
+        balloonFloat 3s
+        ease-in-out
+        infinite;
+}
+
+.balloon-left {
+    left: -6px;
+
+    transform:
+        rotate(-9deg);
+}
+
+.balloon-right {
+    right: -6px;
+
+    transform:
+        rotate(9deg);
+
+    animation-delay:
+        0.8s;
+}
+
+.balloon-body {
+    font-size: 44px;
+
+    filter:
+        drop-shadow(
+            0 8px 12px
+            rgba(
+                0,
+                0,
+                0,
+                0.2
+            )
+        );
+}
+
+.balloon-string {
+    width: 1px;
+
+    height: 42px;
+
+    margin:
+        -4px auto 0;
+
+    background:
+        rgba(
+            190,
+            190,
+            210,
+            0.4
+        );
+}
+
+
+/* =====================================
+   BIRTHDAY TITLE
+===================================== */
+
+.birthday-title {
+    font-size:
+        clamp(
+            41px,
+            11vw,
+            56px
+        ) !important;
+}
+
+.birthday-title span {
+    color: var(--maroon-light);
+}
+
+
+/* =====================================
+   CARD
+===================================== */
+
+.card {
+    max-width: 360px;
+
+    margin:
+        24px auto;
+
+    padding: 21px;
+
+    border-radius: 20px;
+
+    border:
+        1px solid var(--border);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(
+                255,
+                255,
+                255,
+                0.09
+            ),
+            rgba(
+                255,
+                255,
+                255,
+                0.035
+            )
+        );
+
+    backdrop-filter:
+        blur(12px);
+
+    box-shadow:
+        0 18px 45px
+        rgba(
+            0,
+            0,
+            0,
+            0.18
+        );
+}
+
+.card-top {
+    display: flex;
+
+    justify-content:
+        space-between;
+
+    align-items: center;
+
+    margin-bottom: 16px;
+
+    font-size: 9px;
+
+    letter-spacing: 1.5px;
+
+    color: #a8acd0;
+
+    font-weight: 800;
+}
+
+.card p {
+    color: #bfc1ce;
+
+    font-size: 13px;
+
+    line-height: 1.8;
+
+    margin-bottom: 12px;
+}
+
+.card p:first-of-type {
+    color: #dbd9e3;
+
+    font-weight: 800;
+
+    font-size: 15px;
+}
+
+.card p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* =====================================
+   FINAL
+===================================== */
+
+.final-symbol {
+    width: 88px;
+
+    height: 88px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    margin: 0 auto 20px;
+
+    border-radius: 22px;
+
+    font-size: 40px;
+
+    color: #d7d5e5;
+
+    background:
+        linear-gradient(
+            145deg,
+            #526b91,
+            #594d77
+        );
+
+    box-shadow: var(--shadow);
+
+    animation:
+        finalFloat 2s infinite;
+}
+
+.final-message {
+    max-width: 350px;
+
+    margin: 24px auto;
+
+    color: #b8bbc9;
+
+    font-size: 13.5px;
+
+    line-height: 1.85;
+}
+
+.final-message p {
+    margin-bottom: 15px;
+}
+
+.final-message strong {
+    display: block;
+
+    margin-top: 22px;
+
+    color: var(--maroon-light);
+
+    font-size: 19px;
+}
+
+.signature-symbol {
+    margin-top: 18px;
+
+    color: #aaa8ca;
+
+    font-size: 21px;
+}
+
+.final-icons {
+    display: flex;
+
+    justify-content:
+        center;
+
+    gap: 18px;
+
+    margin: 22px 0;
+
+    font-size: 18px;
+
+    opacity: 0.85;
+}
+
+.restart-button {
+    padding:
+        10px 18px;
+
+    border-radius: 11px;
+
+    border:
+        1px solid
+        rgba(
+            210,
+            210,
+            230,
+            0.2
+        );
+
+    color: #bbbccc;
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.04
+        );
+
+    cursor: pointer;
+
+    font-size: 12px;
+
+    transition: 0.2s ease;
+}
+
+.restart-button:hover {
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.09
+        );
+
+    transform:
+        translateY(-2px);
+}
+
+
+/* =====================================
+   DECORATIONS
+===================================== */
+
+.decoration {
+    position: fixed;
+
+    z-index: 1;
+
+    pointer-events: none;
+
+    opacity: 0.5;
+
+    animation:
+        decorationFloat
+        5s
+        ease-in-out
+        infinite;
+}
+
+.deco-star-1 {
+    top: 12%;
+    left: 11%;
+
+    color: #9da5cd;
+
+    font-size: 24px;
+}
+
+.deco-star-2 {
+    top: 21%;
+    right: 14%;
+
+    color: #b49bc2;
+
+    font-size: 19px;
+
+    animation-delay: 0.8s;
+}
+
+.deco-star-3 {
+    bottom: 16%;
+    left: 12%;
+
+    color: #8e9cbe;
+
+    font-size: 22px;
+
+    animation-delay: 1.6s;
+}
+
+.deco-cassette {
+    bottom: 12%;
+    right: 11%;
+
+    font-size: 24px;
+
+    opacity: 0.32;
+
+    animation-delay: 1s;
+}
+
+.deco-camera {
+    top: 48%;
+    left: 4%;
+
+    font-size: 21px;
+
+    opacity: 0.28;
+
+    animation-delay: 2s;
+}
+
+.deco-headphone {
+    top: 44%;
+    right: 4%;
+
+    font-size: 23px;
+
+    opacity: 0.28;
+
+    animation-delay: 2.5s;
+}
+
+
+/* =====================================
+   CONFETTI
+===================================== */
+
+#confettiContainer {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 999;
+
+    pointer-events: none;
+
+    overflow: hidden;
+}
+
+.confetti {
+    position: absolute;
+
+    top: -20px;
+
+    animation:
+        confettiFall
+        3.3s
+        linear
+        forwards;
+}
+
+
+/* =====================================
+   ANIMATIONS
+===================================== */
+
+@keyframes symbolFloat {
+    0%,
+    100% {
+        transform:
+            translateY(0)
+            rotate(0deg);
+    }
+
+    50% {
+        transform:
+            translateY(-8px)
+            rotate(10deg);
+    }
+}
+
+@keyframes cursorBlink {
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+}
+
+@keyframes musicPulse {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.25);
+    }
+}
+
+@keyframes hintPulse {
+    0%,
+    100% {
+        opacity: 0.4;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+@keyframes cakeFloat {
+    0%,
+    100% {
+        transform:
+            translateY(0)
+            rotate(0deg);
+    }
+
+    50% {
+        transform:
+            translateY(-8px)
+            rotate(-2deg);
+    }
+}
+
+@keyframes glowPulse {
+    0%,
+    100% {
+        transform: scale(0.95);
+
+        opacity: 0.5;
+    }
+
+    50% {
+        transform: scale(1.1);
+
+        opacity: 1;
+    }
+}
+
+@keyframes balloonFloat {
+    0%,
+    100% {
+        margin-top: 0;
+    }
+
+    50% {
+        margin-top: -12px;
+    }
+}
+
+@keyframes finalFloat {
+    0%,
+    100% {
+        transform:
+            translateY(0)
+            rotate(0deg);
+    }
+
+    50% {
+        transform:
+            translateY(-7px)
+            rotate(2deg);
+    }
+}
+
+@keyframes decorationFloat {
+    0%,
+    100% {
+        transform:
+            translateY(0)
+            rotate(0deg);
+    }
+
+    50% {
+        transform:
+            translateY(-13px)
+            rotate(8deg);
+    }
+}
+
+@keyframes confettiFall {
+    0% {
+        transform:
+            translateY(-20px)
+            rotate(0deg);
+
+        opacity: 1;
+    }
+
+    100% {
+        transform:
+            translateY(110vh)
+            rotate(720deg);
+
+        opacity: 0;
+    }
+}
+
+
+/* =====================================
+   MOBILE
+===================================== */
+
+@media (max-width: 480px) {
+
+    .scene {
+        padding:
+            55px 17px 25px;
+    }
+
+    .content h1 {
+        font-size: 48px;
+    }
+
+    .content h2 {
+        font-size: 38px;
+    }
+
+    .description {
+        font-size: 13px;
+    }
+
+    .music-button {
+        top: 13px;
+        right: 13px;
+    }
+
+    .envelope-wrapper {
+        width: 210px;
+
+        height: 150px;
+
+        margin-top: 30px;
+    }
+
+    .card {
+        padding: 19px;
+    }
+
+    .balloon-body {
+        font-size: 37px;
+    }
+
+    .balloon-left {
+        left: 0;
+    }
+
+    .balloon-right {
+        right: 0;
+    }
+
+    .deco-cassette,
+    .deco-camera,
+    .deco-headphone {
+        opacity: 0.18;
+    }
+}
